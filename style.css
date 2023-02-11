@@ -22,13 +22,12 @@ body{
 
 main{
     display: grid;
-    grid-template-rows: 300px;
-    grid-template-columns:500px;
+    grid-template-columns:1fr 1fr 1fr 1fr;
     grid-template-areas: 
     "first first second aside"
     "third four four aside"
     ;
-    grid-row-gap: 10px;
+    grid-row-gap: 20px;
     grid-column-gap: 20px;
     margin: 100px;
     
@@ -39,10 +38,10 @@ section{
     flex-direction: column;
     align-items: flex-start;
     border-radius: 20px;
-    padding: 30px;
     font-family: 'Barlow Semi Condensed', sans-serif;
     color: white;
-    font-weight: 500;
+    font-weight: 600;
+    padding: 30px 10px;
 }
 
 
@@ -56,21 +55,34 @@ img{
 
 
 h3{
-    margin: 15px 0px;
+    margin: 15px 20px;
 }
 
 h5{
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: 500;
-    color:hsla(0, 0%, 100%, 0.500) ;
+    color:hsla(0, 0%, 100%, 0.500);
+    margin: 2px 0;
 }
 
 .titleOpacity{
     color:hsla(0, 0%, 50%, 0.500) ;
 }
 
+
+
+
 .profileAndName{
     display: flex;
+    margin: 0 20px;
+}
+
+
+
+.details{
+    margin: 0 20px;
+    color:hsla(0, 0%, 70%, 0.500) ;
+    
 }
 
 .firstOpinion{
@@ -83,6 +95,8 @@ h5{
 
 
 
+
+
 .secondOpinion{
     background-color: hsl(217, 19%, 35%);
     grid-area: second;
@@ -91,16 +105,90 @@ h5{
 .thirdOpinion{
     background-color:hsl(0, 0%, 100%);
     grid-area: third;
-    color: hsl(0, 0%, 81%);
+    color: hsl(0, 0%, 70%);
+    box-shadow: 0px 5px 10px ;
+}
+
+.thirdOpinion>div>div>h4{
+    color: hsl(0, 0%, 40%);
+}
+
+.thirdOpinion>h3{
+    color: hsl(0, 0%, 40%);
+
 }
 
 .fourOpinion{
     background-color:hsl(219, 29%, 14%);
     grid-area: four;
+    box-shadow: 0px 5px 10px gray;
 }
 
 .asideOpinion{
     background-color: hsl(0, 0%, 100%);
     grid-area: aside;
-    color: hsl(0, 0%, 81%);
+    color: hsl(0, 0%, 70%);
+    box-shadow: 5px 10px 10px;
+}
+
+.asideOpinion>div>div>h4{
+    color: hsl(0, 0%, 40%);
+}
+
+.asideOpinion>h3 {
+    color: hsl(0, 0%, 40%);
+
+}
+
+.attribution{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 20px;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+
+
+
+/* MEDIAS QUERIES */
+
+@media (max-width: 768px){
+    main{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin: 50px 40px;
+    }
+
+    section{
+        padding: 20px 20px;
+    }
+
+    .firstOpinion{
+        background-position: top right 20px;
+    }
+
+
+    .secondOpinion{
+        box-shadow: 0px 10px 10px ;
+
+    }
+    .asideOpinion{
+        box-shadow: 0px 10px 10px ;
+
+    }
+
+    .attribution{
+        flex-direction: row;
+        padding: 0px;
+        justify-content: center;
+        margin: 0;
+    }
+
 }
